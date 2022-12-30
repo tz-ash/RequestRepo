@@ -29,7 +29,7 @@ BUTTONS = {}
 SPELL_CHECK = {}
 
 
-@Client.on_message(filters.group & filters.text & filters.incoming)
+@Client.on_message((filters.group | filters.private) & filters.text & filters.incoming)
 async def give_filter(client, message):
     k = await manual_filters(client, message)
     if k == False:
@@ -761,12 +761,15 @@ async def auto_filter(client, msg, spoll=False):
             fmsg = await message.reply_photo(photo=poster, caption=cap[:1024], reply_markup=InlineKeyboardMarkup(btn))
         except Exception as e:
             logger.exception(e)
-            fmsg = await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
+            image = "https://telegra.ph/file/329bd4dae3fb88fa8aa30.jpg"
+            fmsg = await message.reply_photo(photo=image, caption=cap[:1024], reply_markup=InlineKeyboardMarkup(btn))
     else:
-         fmsg = await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
-       
-    await asyncio.sleep(900)
-    await fmsg.delete()
+        image = "https://telegra.ph/file/329bd4dae3fb88fa8aa30.jpg"
+        fmsg = await message.reply_photo(photo=image, caption=cap, reply_markup=InlineKeyboardMarkup(btn))
+    if spoll:
+        await msg.message.delete()
+
+    scheduler.add_job(fmsg.delete, trigger="date", run_date=datetime.datetime.now() + datetime.timedelta(seconds=AUTO_DELETE))
     
     if spoll:
         await msg.message.delete()
