@@ -24,7 +24,7 @@ async def start(client, message):
     if message.chat.type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
         buttons = [
             [
-                InlineKeyboardButton('🤖 Updates', url='https://t.me/MyBotzzupdate')
+                InlineKeyboardButton('🤖 Updates', url='https://t.me/art_loop')
             ],
             [
                 InlineKeyboardButton('ʜᴇʟᴘ', url=f"https://t.me/{temp.U_NAME}?start=help"),
@@ -45,11 +45,11 @@ async def start(client, message):
         buttons = [[
             InlineKeyboardButton('⚚ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ⚚', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
-            InlineKeyboardButton('💠 ᴜᴘᴅᴀᴛᴇ 💠', url='https://t.me/MyBotzzupdate'),
-            InlineKeyboardButton('💠 ᴍᴏᴠɪᴇs 💠', url='https://t.me/Movie_Bazar_GP')
+            InlineKeyboardButton('🪬 ᴜᴘᴅᴀᴛᴇ 🪬', url='https://t.me/art_loop'),
+            InlineKeyboardButton('🪬 ᴍᴏᴠɪᴇs 🪬', url='https://t.me/kidhub')
             ],[      
-            InlineKeyboardButton('♻️ ʜᴇʟᴘ ♻️', callback_data='help'),
-            InlineKeyboardButton('♻️ ᴀʙᴏᴜᴛ ♻️', callback_data='about')
+            InlineKeyboardButton('🧿 ʜᴇʟᴘ 🧿', callback_data='help'),
+            InlineKeyboardButton('🧿 ᴀʙᴏᴜᴛ 🧿', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
@@ -68,11 +68,11 @@ async def start(client, message):
         buttons = [[
             InlineKeyboardButton('⚚ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ⚚', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
-            InlineKeyboardButton('💠 ᴜᴘᴅᴀᴛᴇ 💠', url='https://t.me/MyBotzzupdate'),
-            InlineKeyboardButton('💠 ᴍᴏᴠɪᴇs 💠', url='https://t.me/Movie_Bazar_GP')
+            InlineKeyboardButton('🪬 ᴜᴘᴅᴀᴛᴇ 🪬', url='https://t.me/art_loop'),
+            InlineKeyboardButton('🪬 ᴍᴏᴠɪᴇs 🪬', url='https://t.me/kidhub')
             ],[      
-            InlineKeyboardButton('♻️ ʜᴇʟᴘ ♻️', callback_data='help'),
-            InlineKeyboardButton('♻️ ᴀʙᴏᴜᴛ ♻️', callback_data='about')
+            InlineKeyboardButton('🧿 ʜᴇʟᴘ 🧿', callback_data='help'),
+            InlineKeyboardButton('🧿 ᴀʙᴏᴜᴛ 🧿', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
